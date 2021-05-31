@@ -5,13 +5,13 @@ export default function Drink({drinkId}) {
    
     
     console.log(drinkId)
-        var details=[]
+        let details=[]
     
         let descurl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+drinkId
         async function getDescrip(){
             let descrip= await Axios.get(descurl);
             details= descrip.data.drinks['0'];
-            console.log(details);
+            console.log(descrip.data.drinks);
             console.log(details['strCategory']);
             console.log(details["strDrink"]);
             console.log(details["strDrinkThumb"]+"/preview");
@@ -23,6 +23,7 @@ export default function Drink({drinkId}) {
     
            <div className="col-sm-6 col-md-auto mb-3 text-center ">
                 <h1>this is Drink page</h1>
+                
                 <h1 className="fw-bold">{details["strDrink"]}</h1>
                 <img src={details["strDrinkThumb"]} className="fluid img-thumbnail mt-3" alt="cocktails"/>
     

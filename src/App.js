@@ -2,6 +2,7 @@ import Axios from 'axios';
 import  { useState } from 'react';
 import Tiles from "./Tiles"
 import Drink from "./Drink"
+import{BrowserRouter as Router ,Route} from 'react-router-dom';
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
   }
 
   return (
+    <Router>
     <div className='container'>
       <div className='row justify-content-md-center py-3'>
       <h2 className='col text-center'>Cocktailer</h2>
@@ -50,18 +52,12 @@ function App() {
         {drinks.map(drink => {
           return <Tiles key={drink['idDrink']} drink= {drink} />;
         })}
-        </div>
-        </div>
-        <div className="container ">
-        <div className="row  justify-content-center">
-        
-          <Drink key='1'/>;
-      
+        <Route path="./Drink" component={Drink} />
         </div>
         </div>
       </div>
     
-    
+      </Router>
 )}
 
 export default App;

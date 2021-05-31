@@ -7,12 +7,10 @@ export default function Tiles({drink}) {
     const [drinkId, setdrinkId]= useState(drink["idDrink"])
     return (
         
-            <div className="col-sm-6 col-md-auto mb-3 text-center " onClick={(e)=>{
-                e.preventDefault();
+            <div className="col-sm-6 col-md-auto mb-3 text-center " onClick={()=>{
                 setdrinkId ( drink["idDrink"]);
-
                 window.open('./Drink')
-                //Drink({drinkId});
+                Drink({drinkId});
                 
                
             }}>
