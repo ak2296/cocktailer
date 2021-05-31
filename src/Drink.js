@@ -22,7 +22,7 @@ export default function Drink({drinkId}) {
         return (
     
            <div className="col-sm-6 col-md-auto mb-3 text-center ">
-               
+                <h1>this is Drink page</h1>
                 <h1 className="fw-bold">{details["strDrink"]}</h1>
                 <img src={details["strDrinkThumb"]} className="fluid img-thumbnail mt-3" alt="cocktails"/>
     

@@ -1,6 +1,7 @@
 import Axios from 'axios';
-import { useState } from 'react';
+import  { useState } from 'react';
 import Tiles from "./Tiles"
+import Drink from "./Drink"
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
       <div className='row justify-content-md-center py-3'>
       <h2 className='col text-center'>Cocktailer</h2>
       </div>
+
       <div className="row  justify-content-center">
         <div className="col-lg-8">
         <form className='input-group' onSubmit={submit}>
@@ -42,11 +44,19 @@ function App() {
         </form>
         </div>
         </div>
+
         <div className="container ">
         <div className="row  justify-content-center">
         {drinks.map(drink => {
           return <Tiles key={drink['idDrink']} drink= {drink} />;
         })}
+        </div>
+        </div>
+        <div className="container ">
+        <div className="row  justify-content-center">
+        
+          <Drink key='1'/>;
+      
         </div>
         </div>
       </div>
