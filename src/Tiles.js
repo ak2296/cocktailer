@@ -9,8 +9,9 @@ export default function Tiles(props) {
         
             <div className="col-sm-6 col-md-auto mb-3 text-center " onClick={()=>{
                 setdrinkId ( props.drink["idDrink"]);
+                window.open('./Drink')
                 Drink({drinkId});
-                window.open('./Drink.js')
+                
                
             }}>
             <img src={props.drink["strDrinkThumb"]+"/preview"} className="fluid img-thumbnail mt-3" alt="cocktails"/>

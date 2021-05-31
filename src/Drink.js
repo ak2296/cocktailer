@@ -1,14 +1,13 @@
 import React from 'react'
 import Axios from 'axios';
 
-export default function Drink(props) {
-
-    let id=props['drinkId']
+export default function Drink({drinkId}) {
+   
     
-    //console.log(drinkId)
+    console.log(drinkId)
         var details=[]
     
-        let descurl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id
+        let descurl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+drinkId
         async function getDescrip(){
             let descrip= await Axios.get(descurl);
             details= descrip.data.drinks['0'];
