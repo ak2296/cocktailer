@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import { useState } from 'react';
 import Tiles from "./Tiles"
-import Drink from "./Drink"
 
 function App() {
   
@@ -37,7 +36,7 @@ function App() {
           <div className="col-2 ml-5">
           <select className="form-select text-truncate">
             <option  value="Name" onClick={()=>setsearchType('search.php?s')}> Name</option>
-            <option  value="Ingredients" onSelect={()=>setsearchType('filter.php?i')}> Ingredients</option>
+            <option  value="Ingredients" onClick={()=>setsearchType('filter.php?i')}> Ingredients</option>
           </select>
           </div>
         </form>
