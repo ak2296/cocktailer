@@ -45,7 +45,7 @@ function App() {
         <div className="container ">
         <div className="row  justify-content-center">
         {drinks.map(drink => {
-          return <Tiles drink= {drink} />;
+          return <Tiles key={drink['idDrink']} drink= {drink} />;
         })}
         </div>
         </div>
