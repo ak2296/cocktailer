@@ -2,7 +2,7 @@ import Axios from 'axios';
 import  { useState } from 'react';
 import Tiles from "./Tiles"
 import Drink from "./Drink"
-import{BrowserRouter as Router ,Route} from 'react-router-dom';
+import{BrowserRouter as Router ,Route, Switch} from 'react-router-dom';
 
 function App() {
   
@@ -39,24 +39,28 @@ function App() {
           <button type="submit" className="btn btn-primary mb-3">search</button>
           <div className="col-2 ml-5">
           <select className="form-select text-truncate">
-            <option  value="Name" onClick={()=>setsearchType('search.php?s')}> Name</option>
-            <option  value="Ingredients" onClick={()=>setsearchType('filter.php?i')}> Ingredients</option>
+            <option  value="Name" onSelect={()=>setsearchType('search.php?s')}> Name</option>
+            <option  value="Ingredients" onSelect={()=>setsearchType('filter.php?i')}> Ingredients</option>
           </select>
           </div>
         </form>
         </div>
         </div>
-
+       
         <div className="container ">
         <div className="row  justify-content-center">
+        
         {drinks.map(drink => {
           return <Tiles key={drink['idDrink']} drink= {drink} />;
         })}
+       
         <Route path="./Drink" component={Drink} />
+      
         </div>
         </div>
+       
       </div>
-    
+      
       </Router>
 )}
 
