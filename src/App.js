@@ -1,3 +1,4 @@
+
 import Axios from 'axios';
 import  { useState } from 'react';
 import Tiles from "./Tiles"
@@ -14,7 +15,6 @@ function App() {
   async function getDrinks(){
     let result= await Axios.get(url);
     setdrinks(result.data.drinks);
-    //console.log(result.data);
   }
 
   const submit = (e)=>{
@@ -46,11 +46,9 @@ function App() {
         </form>
         </div>
         </div>
-       
+
         <div className="container ">
-       
           <div className="row  justify-content-center">
-          
             {drinks.map(drink => {
               return <Tiles key={drink['idDrink']} drink= {drink} />;
             })}
@@ -61,9 +59,8 @@ function App() {
           </div>
           </Router>
         </div>
-        
       </div>
-      
+
 )}
 
 export default App;
