@@ -38,9 +38,9 @@ function App() {
           value={query} onChange={(e)=> setquery(e.target.value)}/>
           <button type="submit" className="btn btn-primary mb-3">search</button>
           <div className="col-2 ml-5">
-          <select className="form-select text-truncate">
-            <option  value="Name" onSelect={()=>setsearchType('search.php?s')}> Name</option>
-            <option  value="Ingredients" onSelect={()=>setsearchType('filter.php?i')}> Ingredients</option>
+          <select className="form-select text-truncate" type="button"  data-toggle="dropdown">
+            <option  className="dropdown-item"  onSelect={()=>setsearchType('search.php?s')}> Name</option>
+            <option  className="dropdown-item"  onSelect={()=>setsearchType('filter.php?i')}> Ingredients</option>
           </select>
           </div>
         </form>

@@ -12,8 +12,10 @@ function Drink() {
   let url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id
   async function getDescrip(){
     let result= await Axios.get(url);
+    if(ing.length<1){
     ing.push(result.data.drinks['0']);
     }
+  }
     getDescrip();
     console.log(ing)
 
