@@ -9,7 +9,7 @@ function App() {
   
   const[query, setquery]=useState("")
   const [drinks, setdrinks] = useState([])
-  const [searchType, setsearchType] = useState('search.php?s')
+  const [searchType, setsearchType] = useState('')
 
   var url= `https://www.thecocktaildb.com/api/json/v1/1/${searchType}=${query}`
   async function getDrinks(){
@@ -24,30 +24,38 @@ function App() {
 
   return (
     
-    <div className='App container'>
-      <div className='row justify-content-md-center py-3'>
-      <h2 className='col text-center'>Cocktailer</h2>
+    <div className='container bg-light ' >
+      <div className='row justify-content-center py-3 bg-warning mb-5 mt-3'>
+      <h2 className='col text-center fw-bold text-muted'>COCKTAILER</h2>
       </div>
 
-      <div className="row  justify-content-center">
-        <div className="col-lg-8">
-        <form className='input-group' onSubmit={submit}>
-          <input 
-          type="text" className="form-control mb-3" 
-          placeholder="Search for a drink..." 
-          value={query} onChange={(e)=> setquery(e.target.value)}/>
-          <button type="submit" className="btn btn-primary mb-3">search</button>
-          <div className="col-2 ml-5">
-          <select className="form-select text-truncate" type="button"  data-toggle="dropdown">
-            <option  className="dropdown-item"  onSelect={()=>setsearchType('search.php?s')}> Name</option>
-            <option  className="dropdown-item"  onSelect={()=>setsearchType('filter.php?i')}> Ingredients</option>
-          </select>
-          </div>
-        </form>
+    <form className='row  justify-content-center ' onSubmit={submit}>
+        <div className="col-10 col-md-6 ">
+            <input
+            type="text" className="form-control mb-3" 
+            placeholder="Search for a drink..." 
+            value={query} onChange={(e)=> setquery(e.target.value)}/>
         </div>
+        <div className="col-10 col-md-2 text-center">
+            <button type="submit" className="container-fluid btn btn-secondary mb-3 ">Search</button>
         </div>
+          <div className="col-10 col-md-2">
+          <div className="form-check ">
+            <input className="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={()=>setsearchType('search.php?s')}/>
+            <label className="form-check-label " htmlFor="flexRadioDefault1">
+              Name
+            </label>
+            </div>
+          <div className="form-check">
+            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  onSelect={()=>setsearchType('filter.php?i')}/>
+            <label className="form-check-label " htmlFor="flexRadioDefault2">
+              Ingredients
+            </label>
+            </div>
+        </div>
+    </form>
 
-        <div className="container ">
+        <div className="container min-vh-100">
           <div className="row  justify-content-center">
             {drinks.map(drink => {
               return <Tiles key={drink['idDrink']} drink= {drink} />;
@@ -58,6 +66,11 @@ function App() {
            <Route path='/Drink' component={Drink} />
           </div>
           </Router>
+        </div>
+        <div className="row justify-content-center bg-secondary py-3">
+          <div className="col">
+          <p className="text-center text-warning align-middle mb-0 fw-bold">June 2021 - Group 16</p>
+        </div>
         </div>
       </div>
 
