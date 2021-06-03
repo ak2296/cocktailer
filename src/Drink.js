@@ -23,6 +23,7 @@ function Drink() {
   }
   getDescrip();
 console.log(ingred)
+
 //sends data to favorite
 function toFavorites(){};
 
