@@ -10,6 +10,7 @@ function App() {
   
 
   return (
+    //this Routes the pages that has to show 
     <Router>
     <div className='container bg-light min-vh-100' >
       <div className='row justify-content-center py-3 bg-warning mb-5 mt-3'>
