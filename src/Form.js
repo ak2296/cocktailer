@@ -5,11 +5,12 @@ import  { useState } from 'react';
 
 
 export default function Form() {
-    const[query, setquery]=useState("")
+  const[query, setquery]=useState("")
   const [drinks, setdrinks] = useState([])
   const [searchType, setsearchType] = useState('')
 
   var url= `https://www.thecocktaildb.com/api/json/v1/1/${searchType}=${query}`
+  // Fetches API based on type of search and the value of search bar
   async function getDrinks(){
     let result= await Axios.get(url);
     setdrinks(result.data.drinks);
@@ -21,6 +22,8 @@ export default function Form() {
   }
    
     return (
+      // this is the search bar and buttons in search bar
+      // att the bottom it sends needed data to Tiles
         <div className="row text-center ">  
         <form className='row  justify-content-center ' onSubmit={submit}>
         <div className="col-10 col-md-6 ">

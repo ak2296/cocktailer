@@ -6,11 +6,11 @@ import{BrowserRouter as Router ,Route, Switch} from 'react-router-dom';
 
 
 function App() {
-  
-  
+
 
   return (
-    //this Routes the pages that has to show 
+    //this Routes the pages that has to show
+    //Switch controls the pages to show so not all of them are shown together
     <Router>
     <div className='container bg-light min-vh-100' >
       <div className='row justify-content-center py-3 bg-warning mb-5 mt-3'>
@@ -20,6 +20,7 @@ function App() {
       </a>
       </div>
         <div className="row  justify-content-center min-vh-100">
+          
           <Switch>
             <Route path='/' exact component={Form} />
             <Route path='/Tiles' component={Tiles} />
