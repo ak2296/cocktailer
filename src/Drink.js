@@ -28,6 +28,7 @@ console.log(ingred)
 function toFavorites(){};
 
     return (
+      //at save to favorite we need a function to change the icon and send data to favorite page
       <div className="row text-center mt-3 h-100">
         <div className="col  mb-3 justify-content-center ">
         <div >
@@ -37,8 +38,10 @@ function toFavorites(){};
         </div>
         <div >
         
-        <img  className=" col-1 img-thumbnail float-end mt-3 bg-light border-0 " src={src} alt="Favorite" onClick={()=> {
+        <img  id="add_to_favorites" className=" col-1 img-thumbnail float-end mt-3 bg-light border-0 " src={src} alt="Favorite" onClick={()=> {
           setsrc(yellowheart)
+          // the function above changes the icon but won't toggle it has to fix!!!
+          toFavorites()
            }}/>
 
         </div>

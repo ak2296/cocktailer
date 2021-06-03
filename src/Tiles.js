@@ -5,7 +5,7 @@ import React from 'react';
 export default function Tiles({drink}) {
     let drinkId= drink["idDrink"]
     return (
-            
+            //sends the id of drink to drink page on click
             <div className="col-sm-6 col-md-auto mb-3 text-center " onClick={()=>{
             
                 window.open("./Drink?id="+drinkId, '_self')
