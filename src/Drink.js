@@ -13,16 +13,19 @@ function Drink() {
   const [ingred, setIngred] = useState([]);
   const [src, setsrc]= useState(heart)
   let url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id
+  //fetches data from API for Drink page
   async function getDescrip(){
     let result= await Axios.get(url);
+  //adds data to the hook list
     if(ingred.length<1){
       setIngred(result.data.drinks[0]);
     }
   }
   getDescrip();
 console.log(ingred)
-
+//sends data to favorite
 function toFavorites(){};
+
     return (
       <div className="row text-center mt-3 h-100">
         <div className="col  mb-3 justify-content-center ">
