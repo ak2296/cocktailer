@@ -1,57 +1,42 @@
-import Axios from 'axios';
-import { useState } from 'react';
 import Tiles from "./Tiles"
+import Drink from "./Drink"
+import Form from "./Form"
+import Favorites from "./Favorites"
+import{BrowserRouter as Router ,Route, Switch} from 'react-router-dom';
+
 
 function App() {
   
-  const[query, setquery]=useState("")
-  const [drinks, setdrinks] = useState([])
-  const [searchType, setsearchType] = useState('search.php?s')
-
-  var url= `https://www.thecocktaildb.com/api/json/v1/1/${searchType}=${query}`
-  async function getDrinks(){
-    let result= await Axios.get(url);
-    setdrinks(result.data.drinks);
-    //console.log(result.data);
-  }
-
-  const submit = (e)=>{
-    e.preventDefault();
-    getDrinks();
-  }
+  
 
   return (
-    <div className='container'>
-      <div className='row justify-content-md-center py-3'>
-      <h2 className='col text-center'>Cocktailer</h2>
+    //this Routes the pages that has to show 
+    <Router>
+    <div className='container bg-light min-vh-100' >
+      <div className='row justify-content-center py-3 bg-warning mb-5 mt-3'>
+      <h2 className='col-10 text-center fw-bold text-muted align-self-center'>COCKTAILER</h2>
+      <a className="col-2" href="/Favorites" target="_self">
+        <button type="button" className=" btn btn-warning float-end d-inline"> My Drinks</button>
+      </a>
       </div>
-      <div className="row  justify-content-center">
-        <div className="col-lg-8">
-        <form className='input-group' onSubmit={submit}>
-          <input 
-          type="text" className="form-control mb-3" 
-          placeholder="Search for a drink..." 
-          value={query} onChange={(e)=> setquery(e.target.value)}/>
-          <button type="submit" className="btn btn-primary mb-3">search</button>
-          <div className="col-2 ml-5">
-          <select className="form-select text-truncate">
-            <option  value="Name" onClick={()=>setsearchType('search.php?s')}> Name</option>
-            <option  value="Ingredients" onClick={()=>setsearchType('filter.php?i')}> Ingredients</option>
-          </select>
+        <div className="row  justify-content-center min-vh-100">
+          <Switch>
+            <Route path='/' exact component={Form} />
+            <Route path='/Tiles' component={Tiles} />
+            <Route path='/Drink' component={Drink} />
+            <Route path='/Favorites' component={Favorites} />
+          </Switch>
+        </div>
+
+        <div className="row justify-content-center bg-secondary py-3">
+          <div className="col">
+          <p className="text-center text-warning align-middle mb-0 fw-bold">June 2021 - Group 16</p>
           </div>
-        </form>
         </div>
-        </div>
-        <div className="container ">
-        <div className="row  justify-content-center">
-        {drinks.map(drink => {
-          return <Tiles key={drink['idDrink']} drink= {drink} />;
-        })}
-        </div>
-        </div>
-      </div>
-    
-    
+        
+    </div>
+    </Router>
+
 )}
 
 export default App;
