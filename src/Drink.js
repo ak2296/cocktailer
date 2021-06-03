@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from 'axios';
 import yellowheart from './yellowheart.png';
 import heart from './heart.png';
+import Favorites from './Favorites'
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -29,9 +30,12 @@ console.log(ingred)
         </a>
         </div>
         <div >
-        <a  >
-        <img  className=" col-1 img-thumbnail float-end mt-3 bg-light border-0 " src={src} alt="Favorite" onClick={()=> {setsrc(yellowheart)}}/>
-        </a>
+        
+        <img  className=" col-1 img-thumbnail float-end mt-3 bg-light border-0 " src={src} alt="Favorite" onClick={()=> {
+          setsrc(yellowheart)
+            return <Favorites key={Ingred['idDrink']} Ingred= {Ingred} />;}}/>
+            
+        
         </div>
             <h1 className='border-top border-warning p-2 '>{ingred["strDrink"]}</h1>
         </div>
@@ -65,8 +69,8 @@ console.log(ingred)
       </div>
       
       <div className="container-fluid text-start border-top mb-5">
-        <h5 className="mt-3">How to make the Drink:</h5>
-        <p >{ingred['strInstructions']}</p>
+        <h4 className="mt-3">How to make the Drink:</h4>
+        <p className="fs-5">{ingred['strInstructions']}</p>
       </div>
       </div>
      )
