@@ -21,8 +21,6 @@ function Drink() {
   }
   getDescrip();
 console.log(ingred)
-
-function toFavorites(){};
     return (
       <div className="row text-center mt-3 h-100">
         <div className="col  mb-3 justify-content-center ">
@@ -35,9 +33,11 @@ function toFavorites(){};
         
         <img  className=" col-1 img-thumbnail float-end mt-3 bg-light border-0 " src={src} alt="Favorite" onClick={()=> {
           setsrc(yellowheart)
-           }}/>
+          }}/>
 
-        </div>
+            
+        
+       </div>
             <h1 className='border-top border-warning p-2 '>{ingred["strDrink"]}</h1>
         </div>
       <div className="row text-center ">
