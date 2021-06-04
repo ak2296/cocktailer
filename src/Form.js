@@ -56,7 +56,8 @@ export default function Form() {
          {drinks ? (drinks.map(drink => {
            return <Tiles key={drink['idDrink']} drink= {drink} />;
          })):(<div className=" col-6 justify-content-center bg-danger py-2 text-center text-light mt-5  rounded-3"><h4 >No Drinks Found</h4>
-         <p>To search by ingredients enter the full name of it</p></div>)}
+         <p>To search by ingredients enter the full name of it</p>
+         </div>)}
        </div>
        </div>
        </div>

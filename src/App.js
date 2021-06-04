@@ -13,11 +13,13 @@ function App() {
     //Switch controls the pages to show so not all of them are shown together
     <Router>
     <div className='container bg-light min-vh-100' >
-      <div className='row justify-content-center py-3 bg-warning mb-5 mt-3'>
-      <h2 className='col-10 text-center fw-bold text-muted align-self-center'>COCKTAILER</h2>
-      <a className="col-2" href="/Favorites" target="_self">
-        <button type="button" className=" btn btn-warning float-end d-inline"> My Drinks</button>
+      <div className='row justify-content-center py-2 bg-warning mb-5 mt-3 rounded-top'>
+        <div className='col-12 text-center'>
+      <h2 className='col fw-bold text-muted mb-0'>COCKTAILER</h2>
+      <a className="col-2 d-inline" href="/Favorites" target="_self">
+        <button type="button" className=" btn btn-warning float-end py-0 text-secondary fw-bold"> My Drinks</button>
       </a>
+      </div>
       </div>
         <div className="row  justify-content-center min-vh-100">
           
@@ -29,9 +31,9 @@ function App() {
           </Switch>
         </div>
 
-        <div className="row justify-content-center bg-secondary py-3">
+        <div className="row justify-content-center bg-secondary py-3 mb-3 rounded-bottom">
           <div className="col">
-          <p className="text-center text-warning align-middle mb-0 fw-bold">June 2021 - Group 16</p>
+          <p className="text-center text-warning align-middle mb-0 fw-bold ">June 2021 - Group 16 - CHEERS!</p>
           </div>
         </div>
         
