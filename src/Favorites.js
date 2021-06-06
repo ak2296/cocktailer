@@ -9,7 +9,10 @@ export default function Favorites({ Ingred }) {
   useEffect(() => {
     setFavs(JSON.parse(localStorage.getItem("favoriteDrinks")));
   }, []);
+  //remove function comes here
+const remove= ()=>{
 
+};
   //here we have to have a picture and the name of drink just like tiles that links to its drink page
   return (
     <div className="col  mb-3 text-center ">
@@ -28,8 +31,10 @@ export default function Favorites({ Ingred }) {
         <div className="col">
         {favs.length === 0 ? <h4>No favorites</h4> : ""}
         {favs.map((drink) => {
-          return <Tiles key={drink["idDrink"]} drink={drink} />;
+          return  <div><Tiles key={drink["idDrink"]} drink={drink} /> <button type="button" class="btn btn-danger btn-sm" onClick={() => remove()}>Remove</button>
+          </div>;
         })}
+
         </div>
       </div>
     </div>
