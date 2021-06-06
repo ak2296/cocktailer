@@ -46,7 +46,8 @@ export default function Form() {
           <div className="form-check ">
             <input
               className="form-check-input"
-              checked
+              checked={searchType === "search.php?s" ? true : false}
+              onChange={(e) => {}}
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault1"

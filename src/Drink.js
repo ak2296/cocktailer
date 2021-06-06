@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import yellowheart from "./yellowheart.png";
 import heart from "./heart.png";
-import Favorites from "./Favorites";
 
 function Drink() {
   const queryString = window.location.search;
