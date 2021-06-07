@@ -21,7 +21,7 @@ function App() {
       </a>
       </div>
       </div>
-        <div className="row  justify-content-center min-vh-100">
+        <div className="row  justify-content-center  align-items-start min-vh-100">
           
           <Switch>
             <Route path='/' exact component={Form} />
