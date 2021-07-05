@@ -9,6 +9,8 @@ function Drink() {
   const id = urlParams.get("id");
 
   const [ingred, setIngred] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
+  const [quantities, setQuantities] = useState([]);
   const [src, setsrc] = useState(heart);
   let url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id;
   //fetches data from API for Drink page
@@ -17,6 +19,13 @@ function Drink() {
     //adds data to the hook list
     if (ingred.length < 1) {
       setIngred(result.data.drinks[0]);
+
+      Object.entries(result.data.drinks[0]).map((k) => {
+        if (k[0].includes("strIngredient") && k[1] !== null)
+          setIngredients((ingredients) => [...ingredients, k[1]]);
+        if (k[0].includes("strMeasure"))
+          setQuantities((quantities) => [...quantities, k[1]]);
+      });
     }
   }
 
@@ -108,36 +117,13 @@ function Drink() {
           <p className="text-start fst-italic"> {ingred["strAlcoholic"]}</p>
           <ul className="list-unstyled">
             <h6 className="text-start "> Ingredients:</h6>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 1]} {ingred["strMeasure1"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 2]} {ingred["strMeasure2"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 3]} {ingred["strMeasure3"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 4]} {ingred["strMeasure4"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 5]} {ingred["strMeasure5"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 6]} {ingred["strMeasure6"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 7]} {ingred["strMeasure7"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 8]} {ingred["strMeasure8"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 9]} {ingred["strMeasure9"]}
-            </li>
-            <li className="text-start ms-3">
-              {ingred["strIngredient" + 10]} {ingred["strMeasure10"]}
-            </li>
+            {ingredients.map((v, i) => {
+              return (
+                <li className="text-start ms-3" key={i}>
+                  {v} {quantities[i]}
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="mb-3">
