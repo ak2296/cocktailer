@@ -69,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### Motivation on choosing frameworks/libraries ###
+
+React is a easy learning vastly used library that offers a lot of opportunities to developers like making mobile apps with React Native or virtual reality website using React VR. In short it offers the developers a larger market than its competitors. React has a bigger community than the others which makes it a more reliable comparing to angular and Vue and others. This is because the larger community raises the possibility to fix issues may appear in the future faster and develop the library/framework to a better and more useful one. Factors like what mentioned above (and a lot more that can be piled up to become a book) and it bein straightforward, made the group to decide to use React for the project.
+For a nicer look, fast and easy design and also to dig in the version 5 of the leading CSS framework the group decided to use Bootstrap 5 to decorate the Cocktailer. Less files to mess with, less problem!
